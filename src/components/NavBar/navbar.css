@@ -1,0 +1,52 @@
+header {
+    height: 70px;
+    background-color: #EECBB2;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+li {
+    list-style: none;
+    text-transform: uppercase;
+    display: inline;
+    padding-left: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.Brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+.App-logo {
+    height: 60px;
+}
+
+.Nav {
+    padding: 5px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.App-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Cart-icon {
+    height: 45px;
+  }
+
+.Cart-num {
+    background-color: black;
+    color:white;
+    padding-inline: 5px;
+}
