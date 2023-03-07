@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './routes/Home/Home';
-import Orientales from './routes/Orientales/Orientales';
-import OrientalesId from './routes/Orientales/OrientalesId';
-import Europeas from './routes/Europeas/Europeas';
-import Bastones from './routes/Bastones/Bastones';
+import ItemListContainerId from './routes/ItemListContainerId/ItemListContainerId';
+import ItemDetail from './routes/ItemDetailContainer/ItemDetailContainer';
 import Cart from './routes/Cart/Cart';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
@@ -15,10 +13,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/orientales" element={<Orientales />} />
-        <Route exact path="/orientales/:id" element={<OrientalesId />} />
-        <Route exact path="/europeas" element={<Europeas />} />
-        <Route exact path="/bastones" element={<Bastones />} />
+        <Route exact path="/category/:id" element={<ItemListContainerId />} />
+        <Route exact path="/item/:id" element={<ItemDetail />} />
         <Route exact path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
