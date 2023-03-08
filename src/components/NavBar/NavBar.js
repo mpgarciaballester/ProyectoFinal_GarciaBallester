@@ -11,7 +11,7 @@ const NavBar = () => {
                     <p>Ósken</p></Link>
                 </div>
             <ul>
-                <li><Link to="/category/1">Orientales</Link></li>
+                <li><Link to="/orientales">Orientales</Link></li>
                 <li><Link to="/category/2">Europeas</Link></li>
                 <li><Link to="/category/3">Bastones</Link></li>
             </ul>

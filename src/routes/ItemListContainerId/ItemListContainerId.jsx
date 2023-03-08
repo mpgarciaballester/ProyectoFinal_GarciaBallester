@@ -2,23 +2,30 @@ import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import ItemListContainer from '../../components/ItemListContainer/ItemListContainer';
 
+const categoriaList = ["orientales", "europeas", "bastones"]
+
 const ItemListContainerId = () => {
     const { id } = useParams();
-    const [orientales, setOrientales] = useState({});
+    const [categoria, setCategoria] = useState([]);
 
     useEffect(() => {
-        fetch(`https://swapi.dev/api/people/${id}`)
-        .then((res) => res.json())
-        .then(setOrientales)
+        const promise = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(categoriaList);
+            }, 2000);
+        });
+        promise.then((res) => {
+            setCategoria(res)
+        });
     }, [id])
+
+    //console.log(categoria[id -1])
 
     return (
         <div>
-            <ItemListContainer category={orientales}/>
+            <ItemListContainer categoryTitle= {categoria[id - 1]} categoryId={id}/>
         </div>
     );
 };
-
-//no voy a usar el api, entonces como hacer para que distinga el id?
 
 export default ItemListContainerId;
