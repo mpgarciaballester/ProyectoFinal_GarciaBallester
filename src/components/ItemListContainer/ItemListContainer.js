@@ -88,7 +88,6 @@ const ItemListContainer = ({categoryTitle, categoryId}) => {
 
     console.log(list)
     console.log(categoryId - 1)
-    console.log(categoryTitle)
 
     return (
         <h2>{categoryTitle}</h2>

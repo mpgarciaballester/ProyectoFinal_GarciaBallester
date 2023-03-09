@@ -1,8 +1,8 @@
+import ItemListContainer from "../../components/ItemListContainer/ItemListContainer"
+
 const Home = () => {
     return (
-        <div>
-            Home
-        </div>
+        <ItemListContainer categoryTitle="Home" categoryId=""/>
     );
 };
 
