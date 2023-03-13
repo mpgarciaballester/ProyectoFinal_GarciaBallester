@@ -1,111 +1,173 @@
 import { useState, useEffect } from 'react';
-//import {Link} from 'react-router-dom';
-//import ItemList from './ItemList';
+import ItemList from './ItemList';
 
 const orientales = [
     {
         id: 1,
-        title: 'katana',
-        description: 'katana japonesa',
+        title: 'Katana',
+        description: 'Espada katana japonesa',
         price: '$250 USD',
-        pictureUrl: '../images/katana1.jpg',
+        pictureUrl: '../images/katana.jpg',
     },
     {
         id: 2,
-        title: 'wakizashi',
-        description: 'wakizashi japonesa',
+        title: 'Wakizashi',
+        description: 'Espada wakizashi japonesa',
         price: '$200 USD',
         pictureUrl: '../images/wakizashi.jpg',
     },
     {
         id: 3,
-        title: 'espada árabe',
-        description: 'espada árabe',
+        title: 'Dao',
+        description: 'Espada dao china',
         price: '$290 USD',
-        pictureUrl: '../images/arabe1.jpg',
+        pictureUrl: '../images/dao.jpg',
+    },
+    {
+        id: 4,
+        title: 'Tai Chi',
+        description: 'Espada tai chi china',
+        price: '$290 USD',
+        pictureUrl: '../images/taichi.jpg',
+    },
+    {
+        id: 5,
+        title: 'Shamshir',
+        description: 'Espada shamshir persa',
+        price: '$290 USD',
+        pictureUrl: '../images/shamshir.jpg',
+    },
+    {
+        id: 6,
+        title: 'Kris',
+        description: 'Espada kris indonesia',
+        price: '$290 USD',
+        pictureUrl: '../images/kris.jpg',
     }
 ];
 const europeas = [
     {
         id: 1,
-        title: 'espada inglesa',
-        description: 'espada inglesa',
+        title: 'Zweihänder',
+        description: 'Espada zweihänder alemana',
         price: '$300 USD',
-        pictureUrl: '../images/inglesa.jpg',
+        pictureUrl: '../images/zweihander.jpg',
     },
     {
         id: 2,
-        title: 'espada francesa',
-        description: 'espada francesa',
+        title: 'Claymore',
+        description: 'Espada claymore escocesa',
         price: '$280 USD',
-        pictureUrl: '../images/fracesa1.jpg',
+        pictureUrl: '../images/claymore.jpg',
     },
     {
         id: 3,
-        title: 'espada alemana',
-        description: 'espada alemana',
+        title: 'Briquet',
+        description: 'Sable briquet francés',
         price: '$320 USD',
-        pictureUrl: '../images/alemana.jpg',
+        pictureUrl: '../images/briquet.jpg',
+    },
+    {
+        id: 4,
+        title: 'Rapier',
+        description: 'Espada ropera española',
+        price: '$300 USD',
+        pictureUrl: '../images/rapier.jpg',
+    },
+    {
+        id: 5,
+        title: 'Viking',
+        description: 'Espada vikinga',
+        price: '$280 USD',
+        pictureUrl: '../images/viking.jpg',
+    },
+    {
+        id: 6,
+        title: 'Gladius',
+        description: 'Espada gladius Romana',
+        price: '$320 USD',
+        pictureUrl: '../images/gladius.jpg',
     }
 ];
-const bastones = [
+const ficcion = [
     {
         id: 1,
-        title: 'espada inglesa',
-        description: 'espada inglesa',
+        title: 'Zweihänder',
+        description: 'Espada zweihänder alemana',
         price: '$300 USD',
-        pictureUrl: '../images/inglesa.jpg',
+        pictureUrl: '../images/zweihander.jpg',
     },
     {
         id: 2,
-        title: 'espada francesa',
-        description: 'espada francesa',
+        title: 'Claymore',
+        description: 'Espada claymore escocesa',
         price: '$280 USD',
-        pictureUrl: '../images/fracesa1.jpg',
+        pictureUrl: '../images/claymore.jpg',
     },
     {
         id: 3,
-        title: 'espada alemana',
-        description: 'espada alemana',
+        title: 'Briquet',
+        description: 'Sable briquet francés',
         price: '$320 USD',
-        pictureUrl: '../images/alemana.jpg',
+        pictureUrl: '../images/briquet.jpg',
     },
+    {
+        id: 4,
+        title: 'Rapier',
+        description: 'Espada ropera española',
+        price: '$300 USD',
+        pictureUrl: '../images/rapier.jpg',
+    },
+    {
+        id: 5,
+        title: 'Viking',
+        description: 'Espada vikinga',
+        price: '$280 USD',
+        pictureUrl: '../images/viking.jpg',
+    },
+    {
+        id: 6,
+        title: 'Gladius',
+        description: 'Espada gladius Romana',
+        price: '$320 USD',
+        pictureUrl: '../images/gladius.jpg',
+    }
 ];
+
+const todos = [...orientales, ...europeas, ...ficcion]
+
 
 const ItemListContainer = ({categoryTitle, categoryId}) => {
     const [list, setList] = useState([]);
 
     useEffect(() => {
         const promise = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(categoryTitle);
-            }, 2000);
+            if(categoryId==="1") {
+                resolve(orientales);
+            } else if(categoryId==="2") {
+                resolve(europeas);
+            } else if(categoryId==="3") {
+                resolve(ficcion);
+            } else{
+                resolve(todos)
+            }
         });
         promise.then((res) => {
             setList(res)
         });
-    }, []);
-
-    console.log(list)
-    console.log(categoryId - 1)
+    }, [categoryId]);
 
     return (
-        <h2>{categoryTitle}</h2>
-    )
-
-    /*return (
         <div>
             <h2>{categoryTitle}</h2>
-            {list[categoryId - 1].map((categoria) => {
-                const id = categoria.id;
-
-                    return (
-                        <li><Link to={`/category/${id}`}><ItemList items={categoria}/></Link></li>
-                    )
+            {list.map((categoria) => {
+                return (
+                    <li><ItemList items={categoria}/></li>
+                )
             })};
             
         </div>
-    )*/
+    )
 };
 
 export default ItemListContainer;

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import ItemListContainer from '../../components/ItemListContainer/ItemListContainer';
 
-const categoriaList = ["orientales", "europeas", "bastones"]
+const categoriaList = ["orientales", "europeas", "ficción"]
 
 const ItemListContainerId = () => {
     const { id } = useParams();
