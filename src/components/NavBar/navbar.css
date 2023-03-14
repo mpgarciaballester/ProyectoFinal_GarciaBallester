@@ -5,27 +5,9 @@ header {
     font-weight: 700;
 }
 
-li {
-    list-style: none;
-    text-transform: uppercase;
-    display: inline;
-    padding-left: 30px;
-}
-
 a {
     text-decoration: none;
     color: black;
-}
-
-.Brand {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 24px;
-}
-
-.App-logo {
-    height: 60px;
 }
 
 .Nav {
@@ -34,6 +16,30 @@ a {
     justify-content: space-between;
     align-items: center;
 }
+
+.Nav li {
+    list-style: none;
+    text-transform: uppercase;
+    display: inline;
+    padding-left: 30px;
+}
+
+.Brand a {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    font-size: 24px;
+}
+
+.Brand p {
+    display: inline;
+    padding-left: 16px;
+}
+
+.Brand img {
+    height: 60px;
+}
+
 
 .App-cart {
     display: flex;

@@ -1,0 +1,31 @@
+.Itemlistcontainer {
+    margin: 40px;
+}
+
+.Item-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Item-card {
+    border: 1px solid black;
+    border-radius: 16px;
+    width: 500px;
+    margin-top: 64px;
+}
+
+.Item-card li {
+    margin: 24px;
+}
+
+.Item-card img {
+    width: 452px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.Item-title {
+    font-weight: 700;
+    font-size: 24px;
+}

@@ -7,13 +7,13 @@ const NavBar = () => {
         <header>
             <div className="Nav">
                 <div className="Brand">
-                    <Link to="/"><img src={logo} className="App-logo" alt="logo" />
+                    <Link to="/"><img src={logo} alt="logo" />
                     <p>Ósken</p></Link>
                 </div>
             <ul>
                 <li><Link to="/category/1">Orientales</Link></li>
                 <li><Link to="/category/2">Europeas</Link></li>
-                <li><Link to="/category/3">Ficción</Link></li>
+                <li><Link to="/category/3">Fantasía</Link></li>
             </ul>
             <CartWidget />
             </div>

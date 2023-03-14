@@ -1,140 +1,141 @@
 import { useState, useEffect } from 'react';
 import ItemList from './ItemList';
+import './itemlistcontainer.css';
 
 const orientales = [
     {
         id: 1,
         title: 'Katana',
         description: 'Espada katana japonesa',
-        price: '$250 USD',
-        pictureUrl: '../images/katana.jpg',
+        price: '$300 USD',
+        pictureUrl: '/images/katana.jpg',
     },
     {
         id: 2,
         title: 'Wakizashi',
         description: 'Espada wakizashi japonesa',
-        price: '$200 USD',
-        pictureUrl: '../images/wakizashi.jpg',
+        price: '$220 USD',
+        pictureUrl: '/images/wakizashi.jpg',
     },
     {
         id: 3,
         title: 'Dao',
         description: 'Espada dao china',
-        price: '$290 USD',
-        pictureUrl: '../images/dao.jpg',
+        price: '$280 USD',
+        pictureUrl: '/images/dao.jpg',
     },
     {
         id: 4,
         title: 'Tai Chi',
         description: 'Espada tai chi china',
-        price: '$290 USD',
-        pictureUrl: '../images/taichi.jpg',
+        price: '$270 USD',
+        pictureUrl: '/images/taichi.jpg',
     },
     {
         id: 5,
         title: 'Shamshir',
         description: 'Espada shamshir persa',
         price: '$290 USD',
-        pictureUrl: '../images/shamshir.jpg',
+        pictureUrl: '/images/shamshir.jpg',
     },
     {
         id: 6,
         title: 'Kris',
         description: 'Espada kris indonesia',
-        price: '$290 USD',
-        pictureUrl: '../images/kris.jpg',
+        price: '$260 USD',
+        pictureUrl: '/images/kris.jpg',
     }
 ];
 const europeas = [
     {
-        id: 1,
+        id: 7,
         title: 'Zweihänder',
         description: 'Espada zweihänder alemana',
         price: '$300 USD',
-        pictureUrl: '../images/zweihander.jpg',
+        pictureUrl: '/images/zweihander.jpg',
     },
     {
-        id: 2,
+        id: 8,
         title: 'Claymore',
         description: 'Espada claymore escocesa',
         price: '$280 USD',
-        pictureUrl: '../images/claymore.jpg',
+        pictureUrl: '/images/claymore.jpg',
     },
     {
-        id: 3,
+        id: 9,
         title: 'Briquet',
         description: 'Sable briquet francés',
-        price: '$320 USD',
-        pictureUrl: '../images/briquet.jpg',
+        price: '$220 USD',
+        pictureUrl: '/images/briquet.jpg',
     },
     {
-        id: 4,
+        id: 10,
         title: 'Rapier',
         description: 'Espada ropera española',
-        price: '$300 USD',
-        pictureUrl: '../images/rapier.jpg',
+        price: '$250 USD',
+        pictureUrl: '/images/rapier.jpg',
     },
     {
-        id: 5,
+        id: 11,
         title: 'Viking',
         description: 'Espada vikinga',
-        price: '$280 USD',
-        pictureUrl: '../images/viking.jpg',
+        price: '$230 USD',
+        pictureUrl: '/images/viking.jpg',
     },
     {
-        id: 6,
+        id: 12,
         title: 'Gladius',
         description: 'Espada gladius Romana',
-        price: '$320 USD',
-        pictureUrl: '../images/gladius.jpg',
+        price: '$220 USD',
+        pictureUrl: '/images/gladius.jpg',
     }
 ];
-const ficcion = [
+const fantasia = [
     {
-        id: 1,
-        title: 'Zweihänder',
-        description: 'Espada zweihänder alemana',
-        price: '$300 USD',
-        pictureUrl: '../images/zweihander.jpg',
+        id: 13,
+        title: 'Anduril',
+        description: 'Espada Anduril de El Señor de los Anillos',
+        price: '$210 USD',
+        pictureUrl: '/images/anduril.jpg',
     },
     {
-        id: 2,
-        title: 'Claymore',
-        description: 'Espada claymore escocesa',
-        price: '$280 USD',
-        pictureUrl: '../images/claymore.jpg',
+        id: 14,
+        title: 'Sting',
+        description: 'Espada Sting de El Señor de los Anillos',
+        price: '$180 USD',
+        pictureUrl: '/images/sting.jpg',
     },
     {
-        id: 3,
-        title: 'Briquet',
-        description: 'Sable briquet francés',
-        price: '$320 USD',
-        pictureUrl: '../images/briquet.jpg',
+        id: 15,
+        title: 'Orcrist',
+        description: 'Espada Orcrist de El Hobbit',
+        price: '$200 USD',
+        pictureUrl: '/images/orcrist.jpg',
     },
     {
-        id: 4,
-        title: 'Rapier',
-        description: 'Espada ropera española',
-        price: '$300 USD',
-        pictureUrl: '../images/rapier.jpg',
+        id: 16,
+        title: 'Needle',
+        description: 'Espada Needle de Game of Thrones',
+        price: '$130 USD',
+        pictureUrl: '/images/needle.jpg',
     },
     {
-        id: 5,
-        title: 'Viking',
-        description: 'Espada vikinga',
-        price: '$280 USD',
-        pictureUrl: '../images/viking.jpg',
+        id: 17,
+        title: 'Longclaw',
+        description: 'Espada Longclaw de Game of Thrones',
+        price: '$120 USD',
+        pictureUrl: '/images/longclaw.jpg',
     },
     {
-        id: 6,
-        title: 'Gladius',
-        description: 'Espada gladius Romana',
-        price: '$320 USD',
-        pictureUrl: '../images/gladius.jpg',
+        id: 18,
+        title: 'Excalibur',
+        description: 'Excalibur, espada legendaria del Rey Arturo',
+        price: '$140 USD',
+        pictureUrl: '/images/excalibur.jpg',
     }
 ];
 
-const todos = [...orientales, ...europeas, ...ficcion]
+const todos = [...orientales, ...europeas, ...fantasia]
 
 
 const ItemListContainer = ({categoryTitle, categoryId}) => {
@@ -147,7 +148,7 @@ const ItemListContainer = ({categoryTitle, categoryId}) => {
             } else if(categoryId==="2") {
                 resolve(europeas);
             } else if(categoryId==="3") {
-                resolve(ficcion);
+                resolve(fantasia);
             } else{
                 resolve(todos)
             }
@@ -158,14 +159,15 @@ const ItemListContainer = ({categoryTitle, categoryId}) => {
     }, [categoryId]);
 
     return (
-        <div>
-            <h2>{categoryTitle}</h2>
+        <div className="Itemlistcontainer">
+            <h2 className="Category-title">{categoryTitle}</h2>
+            <div className="Item-list">
             {list.map((categoria) => {
                 return (
-                    <li><ItemList items={categoria}/></li>
+                    <li key={categoria.id}><ItemList items={categoria}/></li>
                 )
-            })};
-            
+            })}
+            </div>
         </div>
     )
 };
