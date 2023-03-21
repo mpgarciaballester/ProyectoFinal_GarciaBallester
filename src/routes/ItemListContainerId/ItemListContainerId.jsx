@@ -20,9 +20,7 @@ const ItemListContainerId = () => {
     }, [id])
 
     return (
-        <div>
-            <ItemListContainer categoryTitle= {categoria[id - 1]} categoryId={id}/>
-        </div>
+        <ItemListContainer categoryTitle= {categoria[id - 1]} categoryId={id}/>
     );
 };
 

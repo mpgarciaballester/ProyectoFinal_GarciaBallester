@@ -1,0 +1,34 @@
+.Itemdetailcontainer {
+    margin: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.Item-picture {
+    width: 600px;
+    border: 2px solid #EECBB2;
+    border-radius: 8px;
+    margin-right: 40px;
+}
+
+.Item-detail li {
+    margin-bottom: 24px;
+}
+
+.Item-description {
+    font-size: 16px;
+}
+
+.Item-count {
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Item-count button {
+    width: 32px;
+    background-color: #EECBB2;
+    border: none;
+    border-radius: 8px;
+}

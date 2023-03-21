@@ -173,7 +173,3 @@ const ItemListContainer = ({categoryTitle, categoryId}) => {
 };
 
 export default ItemListContainer;
-
-//no me toma resolve(categoryTitle), pero si me toma categoryTitle en otras instancias
-//ahora si me lo toma pero solo el nombre del const en vez del contenido del array?? aunque no se en que momento aparecio porque trate de nuevo y no aparece; o escribo el comentario entonces como que lo carga de nuevo (pero no la pagina, la terminal) y ahi aparece el list solo como el nombre del const
-//puse list.[1] y me tiraba a, estando en bastones, como que el elemento [1] de bastones es a, la segunda letra

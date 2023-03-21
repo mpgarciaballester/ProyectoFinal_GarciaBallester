@@ -1,17 +1,19 @@
 import { useState } from 'react';
-import cart from '../images/cart.svg';
-import incart from '../images/incart.svg';
+//import cart from '/images/cart.svg';
+//import incart from '/images/incart.svg';
 
 const CartToggle = () => {
-    const [saved, setSaved] = useState(false);
+    const [cart, setCart] = useState(false);
+    const notsaved = "/images/notsaved.svg"
+    const saved = "/images/saved.svg"
 
     const clickHandler = () => {
-        setSaved(!saved)
+        setCart(!cart)
     };
 
     let src
 
-    saved ? src = cart : src = incart
+    cart ? src = saved : src = notsaved
 
     return (
         <div onClick={clickHandler}>

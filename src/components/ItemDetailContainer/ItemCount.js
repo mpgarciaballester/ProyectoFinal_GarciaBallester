@@ -4,7 +4,7 @@ const ItemCount = () => {
     const [counter, setCounter] = useState(0)
 
     const restar = () => {
-        counter != 0 && setCounter(counter - 1)
+        counter !== 0 && setCounter(counter - 1)
     }
 
     const sumar = () => {
@@ -12,7 +12,7 @@ const ItemCount = () => {
     }
 
     return (
-        <div>
+        <div className="Item-count">
             <button onClick={restar}>-</button>
             <p>{counter}</p>
             <button onClick={sumar}>+</button>

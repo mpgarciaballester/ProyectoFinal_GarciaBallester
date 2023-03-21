@@ -9,7 +9,7 @@
 }
 
 .Item-card {
-    border: 1px solid black;
+    border: 2px solid #EECBB2;
     border-radius: 16px;
     width: 500px;
     margin-top: 64px;
@@ -21,7 +21,7 @@
 
 .Item-card img {
     width: 452px;
-    border: 1px solid black;
+    border: 2px solid #EECBB2;
     border-radius: 8px;
 }
 
