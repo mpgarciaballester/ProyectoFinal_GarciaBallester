@@ -20,8 +20,10 @@ const ItemListContainerId = () => {
     }, [id])
 
     return (
-        <ItemListContainer categoryTitle= {categoria[id - 1]} categoryId={id}/>
+        <ItemListContainer categoryTitle= {categoria[id - 1]} id={id}/>
     );
 };
 
 export default ItemListContainerId;
+
+//agregar firebase

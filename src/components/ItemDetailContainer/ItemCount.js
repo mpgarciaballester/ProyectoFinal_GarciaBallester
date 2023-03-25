@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const ItemCount = () => {
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(1)
 
     const restar = () => {
-        counter !== 0 && setCounter(counter - 1)
+        counter !== 1 && setCounter(counter - 1)
     }
 
     const sumar = () => {

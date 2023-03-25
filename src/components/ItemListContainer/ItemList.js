@@ -17,3 +17,5 @@ const ItemList = ({ items }) => {
 };
 
 export default ItemList;
+
+//<Link to={`/item/${items.id}`}>
