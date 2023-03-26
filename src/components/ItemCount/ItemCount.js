@@ -1,14 +1,16 @@
 import { useState } from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({onCount}) => {
     const [counter, setCounter] = useState(1)
 
     const restar = () => {
         counter !== 1 && setCounter(counter - 1)
+        onCount(counter - 1)
     }
 
     const sumar = () => {
         setCounter(counter + 1)
+        onCount(counter + 1)
     }
 
     return (

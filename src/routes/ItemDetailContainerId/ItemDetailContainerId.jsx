@@ -9,7 +9,7 @@ const ItemDetailContainerId = () => {
     }, [id])
 
     return (
-        <ItemDetailContainer categoryId={id}/>
+        <ItemDetailContainer id={id}/>
     );
 };
 

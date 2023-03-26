@@ -1,15 +1,13 @@
 import {Link} from 'react-router-dom';
 
 const ItemList = ({ items }) => {
-    const itemId = "/item/" + items.id
-    
     return (
-        <Link to={itemId}>
+        <Link to={`/item/${items.id}`}>
         <div>
             <ul className="Item-card">
                 <li><img src={items.pictureUrl} alt={items.description}/></li>
                 <li className="Item-title">{items.title}</li>
-                <li className="Item-price">{items.price}</li>
+                <li className="Item-price">${items.price}</li>
             </ul>
         </div>
         </Link>
@@ -17,5 +15,3 @@ const ItemList = ({ items }) => {
 };
 
 export default ItemList;
-
-//<Link to={`/item/${items.id}`}>

@@ -1,0 +1,45 @@
+.Cart-container {
+    margin: 40px;
+}
+
+.Cart-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.Cart-item {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #EECBB2;
+    border-radius: 16px;
+    width: 360px;
+    margin-top: 24px;
+}
+
+.CartItem-picture {
+    width: 136px;
+    border: 2px solid #EECBB2;
+    border-radius: 8px;
+    margin-right: 40px;
+}
+
+.Item-count {
+    margin-top: 4px;
+}
+
+.Bin {
+    width: 32px;
+    margin-top: 16px;
+}
+
+form button {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Libre Baskerville', serif;
+    text-transform: uppercase;
+    padding: 8px;
+    background-color: #EECBB2;
+    border: none;
+    border-radius: 8px;
+}

@@ -1,5 +1,4 @@
-import CartToggle from './CartToggle';
-import ItemCount from '../ItemDetailContainer/ItemCount'
+import AddItem from './AddItem';
 
 const ItemDetail = ({ item }) => {
     return (
@@ -8,9 +7,8 @@ const ItemDetail = ({ item }) => {
             <ul className="Item-detail">
                 <li className="Item-title">{item.title}</li>
                 <li className="Item-description">{item.description}</li>
-                <li className="Item-price">{item.price}</li>
-                <li><ItemCount /></li>
-                <li><CartToggle /></li>
+                <li className="Item-price">${item.price}</li>
+                <li><AddItem item={item}/></li>
             </ul>
         </div>
     );

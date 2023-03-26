@@ -2,7 +2,7 @@ import ItemListContainer from "../../components/ItemListContainer/ItemListContai
 
 const Home = () => {
     return (
-        <ItemListContainer categoryTitle="Home" categoryId=""/>
+        <ItemListContainer categoryTitle="Home" id=""/>
     );
 };
 

@@ -25,5 +25,3 @@ const ItemListContainerId = () => {
 };
 
 export default ItemListContainerId;
-
-//agregar firebase

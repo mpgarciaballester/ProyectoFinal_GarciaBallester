@@ -1,4 +1,4 @@
-import { collection, getFirestore } from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 
 const ContactForm = () => {
@@ -10,8 +10,8 @@ const ContactForm = () => {
     };
 
     const [form, setForm] = useState(formBase);
-
     const [id, setId] = useState()
+
     const submitHandler = (ev) => {
         ev.preventDefault();
 
@@ -69,17 +69,7 @@ const ContactForm = () => {
                     onChange={inputChangeHandler}
                 />
             </div>
-            <div>
-                <label htmlFor="email">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    id="name"
-                    value={form.email}
-                    onChange={inputChangeHandler}
-                />
-            </div>
-            <button>Enviar</button>
+            <button>Comprar</button>
         </form>
         </div>
     )
