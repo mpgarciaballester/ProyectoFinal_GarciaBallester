@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Proyecto Final React JS
+
+Curso React JS, Coderhouse | María Paz García Ballester
+
+Ecommerce de espadas. Categorías de espadas: orientales, europeas, y de fantasía. Se puede elegir la cantidad de cada producto a agregar al carrito, que se tiene en cuenta al mostrarlos junto al ícono del cart en el navBar. Dentro del carrito se pueden visualizar los productos a comprar, con la cantidad de cada uno, el precio, y la posibilidad de eliminarlos del carrito, más el precio total de todos los productos.
+
 ## Available Scripts
 
 In the project directory, you can run:
