@@ -1,12 +1,11 @@
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { useState, useContext } from 'react';
-//import {CartContext} from '../../contexts/CartContext';
-import ItemCount from '../ItemCount/ItemCount';
+import {CartContext} from '../../contexts/CartContext';
+import ItemCount from './ItemCount';
 
 const AddItem = ({ item }) => {
-    //const cartContext = useContext(CartContext)
+    const {addToCart} = useContext(CartContext)
     const [cart, setCart] = useState(false);
-    const [count, setCount] = useState();
+    const [count, setCount] = useState(1);
     const notsaved = "/images/notsaved.svg";
     const saved = "/images/saved.svg";
 
@@ -15,13 +14,7 @@ const AddItem = ({ item }) => {
     };
 
     const clickHandler = () => {
-        
-        const db = getFirestore();
-        const order = collection(db, 'orders');
-        for(let i = 0; i<count; i++){
-            addDoc(order, item);
-        }
-        //cartContext.AddToCart(item, count)
+        addToCart(item, count)
         
         setCart(!cart)
     };

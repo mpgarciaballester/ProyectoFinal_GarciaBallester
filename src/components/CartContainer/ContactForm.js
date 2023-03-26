@@ -1,7 +1,10 @@
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 const ContactForm = () => {
+    const {cartList} = useContext(CartContext);
+
     const formBase = {
         name: '',
         lastname: '',
@@ -15,9 +18,21 @@ const ContactForm = () => {
     const submitHandler = (ev) => {
         ev.preventDefault();
 
+        let total = 0
+        for(let i=0; i<cartList.length; i++) {
+        total += cartList[i].price*cartList[i].count
+        }
+
+        const order = {
+            buyer: form,
+            items: cartList,
+            date: Date.now(),
+            total: total
+        }
+
         const db = getFirestore();
-        const contactFormCollection = collection(db, 'contactform')
-        addDoc(contactFormCollection, form).then((snapshot) => {
+        const orderCollection = collection(db, 'orders')
+        addDoc(orderCollection, order).then((snapshot) => {
             setForm(formBase)
             setId(snapshot.id)
         })

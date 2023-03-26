@@ -1,37 +1,23 @@
-import { useEffect, useState } from 'react';
-import {getFirestore, collection, getDocs} from 'firebase/firestore';
+import { useContext} from 'react';
 import CartItem from './CartItem';
 import ContactForm from './ContactForm';
 import './cartcontainer.css'
+import { CartContext } from '../../contexts/CartContext';
 
 const CartContainer = () => {
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        const db = getFirestore();
-        const itemCollection = collection(db, 'orders');
-        getDocs(itemCollection).then((snapshotList) => {
-            const docs = snapshotList.docs.map((snapshot) => ({
-                ...snapshot.data(),
-                id: snapshot.id
-            }));
-            setItems(docs);
-        });
-
-    }, [items]);
+    const {cartList} = useContext(CartContext)
 
     let total = 0
 
-    for(let i=0; i<items.length; i++) {
-        total += items[i].price
+    for(let i=0; i<cartList.length; i++) {
+        total += cartList[i].price*cartList[i].count
     }
 
     return (
         <div className="Cart-container">
             <h2 className="Category-title">Compra</h2>
             <div className="Cart-list">
-            {items.map((item) => {
-                
+            {cartList.map((item) => {
                 return (
                     <li key={item.id}><CartItem item={item}/></li>
                 )

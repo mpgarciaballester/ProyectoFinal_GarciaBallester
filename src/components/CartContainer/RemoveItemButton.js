@@ -1,11 +1,11 @@
-import { getFirestore, doc, deleteDoc } from "firebase/firestore";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 const RemoveItemButton = ({id}) => {
+    const {deleteItem} = useContext(CartContext)
+
     const clickHandler = () => {
-        const db = getFirestore();
-        const itemRef = doc(db, 'orders', id)
-        deleteDoc(itemRef)
-        console.log(id)
+        deleteItem(id)
     }
 
 

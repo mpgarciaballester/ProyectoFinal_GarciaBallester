@@ -1,4 +1,3 @@
-import ItemCount from '../ItemCount/ItemCount';
 import RemoveItemButton from './RemoveItemButton';
 
 const CartItem = ({ item }) => {
@@ -8,7 +7,7 @@ const CartItem = ({ item }) => {
             <ul className="CartItem-detail">
                 <li className="Item-title">{item.title}</li>
                 <li className="Item-price">${item.price}</li>
-                <li><ItemCount id={item.id} /></li>
+                <li className="Item-count">x{item.count}</li>
                 <li><RemoveItemButton id={item.id} /></li>
             </ul>
         </div>
